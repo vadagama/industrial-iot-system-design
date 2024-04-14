@@ -29,5 +29,5 @@ Currently the solution works as follows:
 - There is no common tag naming rule, tag descriptions are not maintained or are maintained locally at production sites. There is no single directory of all signals available for collection.
 - When a new need arises, data collection requests are created. The collection process is not standardised.
 
-![As Is Architecture](images/as_is.jpg)>
+![As Is Architecture](images/as_is.png)
 
