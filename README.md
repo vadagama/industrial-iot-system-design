@@ -66,7 +66,7 @@ List of the main functional modules with a description of their purpose:
 | Monitoring of equipment condition parameters           | Identification of possible malfunctions of production equipment                                                                                   |
 | Assessment of the technical condition of the equipment | Analysing data on the equipment                                                                                                                   | condition, determining the causes of malfunctions and failures |
 | Alarm management                                       | Taking corrective actions to return the equipment to a serviceable state and reduce material costs.                                               |
-| process efficiency assessment                          | Analysing data on the efficiency of personnel actions to prevent equipment failures and ASMD operation (reporting set)                            |
+| Process efficiency assessment                          | Analysing data on the efficiency of personnel actions to prevent equipment failures and ASMD operation (reporting set)                            |
 | Configurator                                           | Configuration of objects and modules                                                                                                              |
 | Predictive analytics                                   | Early detection of hidden defects on equipment                                                                                                    |
 | Power supply                                           | Identification of possible risks for the operation of production equipment related to the operation and condition of power supply system elements |
@@ -94,12 +94,12 @@ List of the main functional modules with a description of their purpose:
 
 The following diagram shows the C4 model container diagram for the IIoT system.
 
-![Container Diagram](images\IIoT_Context_diagram.jpg)
+![Container Diagram](images/IIoT_Context_diagram.jpg)
 
 The implemented solution consists of the following main elements:
 1.	**Controllers** is data sources that generate events.
 2.** OPC server** is a system that collects and aggregates events from controllers.
-3. OPC Producer is a system directing events from OPC servers to DataLake.
+1. OPC Producer is a system directing events from OPC servers to DataLake.
 5.	**DataLake** is a system that collects and stores all data that is collected by OPC producers. 
 1.	**Kafka** is a distributed streaming data collection system.
 2. **Hive** is a system for accessing historical Hadoop data.
@@ -120,7 +120,7 @@ A description of the interaction of the above elements:
 
 The following diagram shows the C4 model container diagram for the IIoT system.
 
-![Container Diagram](images\IIoT_Container_diagram.jpg)
+![Container Diagram](images/IIoT_Container_diagram.jpg)
 
 
 At the level of the monitoring system itself, the following structure of containers is proposed:
@@ -155,7 +155,7 @@ The business logic layer is implemented using the following technologies:
 The business logic layer in terms of etl-kafka, etl-dg and core is linked to db in terms of data read/write.
 The diagram shows the detailed data model of the system down to the table level with logical relationships between entities.
 
-![Container Diagram](images\db.png)
+![Database model](images/db.png)
 
 The data model consists of the following tables:
 - **TECH_PLACE** - Directory of Technical Places
@@ -273,7 +273,7 @@ The project requires good network bandwidth on its various segments as well as a
 
 A backend implementation option needs to be defined. The following options are considered:
 
-**1 variant - microservices**
+**1 option - microservices**
 
 Prerequisites for choosing a microservices architecture:
 1.	Parts of the functionality described by the Customer are poorly connected with each other (especially in terms of integration with related systems), so it is reasonable to divide them into separate services
@@ -312,7 +312,9 @@ Prerequisites for selecting PostgreSQL:
 2.	It is easier to scale horizontally when there is a heavy load in the part of data processing from Kafka. In the case of our project, a significant increase in load is possible.
 3. It is possible to use different stack for different modules. For example, Python is more suitable for ML.
 4. Failure of one microservice will not lead to failure of the whole system.
-2 option - Oracle Database
+   
+**2 option - Oracle Database**
+
 Prerequisites for choosing Oracle DB:
 1.	High load and avalanche growth of data volume and users are not expected.
 2.	DB partitioning is not planned
