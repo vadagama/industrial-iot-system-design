@@ -16,8 +16,8 @@
   - [Logging](#logging)
 - [Network architecture](#network-architecture)
 - [Architecture Decision Records](#architecture-decision-records)
-  - [ADR-2 Microservices vs Monolith](#adr-2-microservices-vs-monolith)
-  - [ADR-1 Selecting a DBMS for storing operational information](#adr-1-selecting-a-dbms-for-storing-operational-information)
+  - [ADR-1 Microservices vs Monolith](#adr-1-microservices-vs-monolith)
+  - [ADR-2 Selecting a DBMS for storing operational information](#adr-2-selecting-a-dbms-for-storing-operational-information)
 
 
 # Purpose of the document
@@ -268,7 +268,7 @@ The project requires good network bandwidth on its various segments as well as a
 | Between etl-dg and db-dg                                                                             | Throughput - 20GB                                   |
 
 # Architecture Decision Records
-## ADR-2 Microservices vs Monolith
+## ADR-1 Microservices vs Monolith
 **Context**
 
 A backend implementation option needs to be defined. The following options are considered:
@@ -299,7 +299,7 @@ As a result of the analysis, the decision was made to apply a microservice Backe
 
 Possible risks are related to the complication of system maintenance and higher requirements to the qualification of developers.
 
-## ADR-1 Selecting a DBMS for storing operational information
+## ADR-2 Selecting a DBMS for storing operational information
 
 **Context**
 
